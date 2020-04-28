@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Log in | DataSanityzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <section class="bg-dark bg-login p-b-100 overlay overlay-50 overlay-dark overlay-gradient-dark-right">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="mb-5 mt-5 text-center">
+                        <a href="index.html">
+                            <span><img src="assets/images/logos/logo-white.png" alt="" height="120"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="account-pages mt-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center" style="margin-top: -12em;">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-left m-auto">
+                                <h2 class="fs-30 fw-400 mb-1 mt-0">Log in</h2>
+                                <p class="text-muted">Sign in to your account to continue</p>
+                                <hr>
+                            </div>
+
+                            <form action="#">
+                                <div class="form-group mb-3">
+                                    <label class="fw-400">Email address</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fe-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label class="fw-400">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fe-lock"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Enter your password" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
+                                        <label class="custom-control-label fw-400" for="checkbox-signin">Remember me</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-0 text-center">
+                                    <button class="btn btn-block btn-login-gradient fs-22 fw-300 border-0" type="submit">Log In <i class="fe-arrow-right"></i> </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p> <a href="pages-recoverpw.html" class="ml-1 text-muted">Forgot your password?</a></p>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end page -->
+
+    @@include('./partials/footer.html') @@include('./partials/right-sidebar.html')
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+
+</html>

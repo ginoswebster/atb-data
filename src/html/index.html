@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard | DataSanityzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- third party css -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+
+    <!-- Pickers Plugins css -->
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Forms Plugins css -->
+    <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        @@include('./partials/topbar-custom.html')
+        <!-- @@include('./partials/horizontal-nav.html') -->
+    </header>
+    <!-- End Navigation Bar-->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="wrapper--tix">
+        <div class="container-fluid">
+            <!-- Header section -->
+            <div class="row pt-3">
+                <div class="col-lg-10 col-sm-9">
+                    <div>
+                        <h4 class="page-title fs-26 fw-500 mt-2">Tourism Data: Period 2015 - 2019</h4>
+                        <hr class="hr--tix mt-0 w-40 ml-0">
+                        <p class="text-muted fs-18">Time period</p>
+                    </div>
+                </div>
+                <div class="order col-sm-3 col-lg-2 pull-right d-none d-md-block">
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center">
+                                <a href="#" class="mb-1 text-primary"><i class="fe-grid fs-22"></i></a>
+                                <p class="fs-11 lh-10 pt-1">Table view</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="text-center">
+                                <a href="#"><i class="fe-pie-chart fs-22"></i></a>
+                                <p class="fs-11 lh-10 pt-1">Chart view</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body pb-1">
+                            <div class="row">
+                                <div class="col-2 col-sm-2 col-md-1 col-lg-1 mr-2">
+                                    <i class="fe-calendar fs-18"></i>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-10 p-0">
+                                    <label for="range-datepicker" class="mb-0 fs-16 fw-400">Select a date range</label>
+                                    <hr class="mb-0 mt-1">
+                                    <input type="text" id="range-datepicker" class="fw-400 pl-0 br-0 form-control date-range" placeholder="01/01/2015 to 01/02/2015">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-rounded-circle card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+                                    <i class="fe-bar-chart-line font-22 avatar-title text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">78,412</span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Total no. of passenger arrivals</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row-->
+                    </div>
+                    <!-- end widget-rounded-circle-->
+
+                    <!-- end col-->
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-rounded-circle card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
+                                    <i class="fe-trending-up font-22 avatar-title text-info"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">0.58</span>%</h3>
+                                    <p class="text-muted mb-1 text-truncate">Conversion</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- <hr class="mb-3 mt-0 hr--tix"> -->
+
+            <!-- Sample Chart Data Charts -->
+            <div class="row">
+                <!-- Stacked bar chart -->
+                <div class="col-lg-4">
+                    <div class="card-box" dir="ltr">
+                        <h3 class="fs-36 mb-0 fw-400">Nationality</h3>
+                        <p>Filters: American & Italian</p>
+                        <hr>
+                        <div id="morris-bar-stacked" style="height: 350px;" class="morris-chart"></div>
+                        <div class="text-center">
+                            <p class="text-muted font-15 font-family-secondary mb-0">
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-blue"></i> American</span>
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Italian</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end card-box-->
+                </div>
+                <!-- Donut chart -->
+                <div class="col-lg-4">
+                    <div class="card-box" dir="ltr">
+                        <h3 class="fs-36 mb-0 fw-400">Profession</h3>
+                        <p>Filters: Dentist & Managers</p>
+                        <hr>
+                        <div id="donut-example" class="morris-chart" style="height: 350px;"></div>
+                        <div class="text-center">
+                            <p class="text-muted font-15 font-family-secondary mb-0">
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-blue"></i> Dentist</span>
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Manager</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end card-box-->
+                </div>
+                <!-- Donut chart -->
+                <div class="col-lg-4">
+                    <div class="card-box" dir="ltr">
+                        <h3 class="fs-36 mb-0 fw-400">Profession</h3>
+                        <p>Filters: Dentist & Managers</p>
+                        <hr>
+                        <div id="morris-area-example" class="morris-chart" style="height: 350px;"></div>
+                        <div class="text-center">
+                            <p class="text-muted font-15 font-family-secondary mb-0">
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-blue"></i> Dentist</span>
+                                <span class="mx-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Manager</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end card-box-->
+                </div>
+            </div>
+
+            <!-- ATB DATATABLE: Data is generated using a json. See datatable.init.js. Look for table ID-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3 class="fs-26 fw-400 mb-1 mt-1">Time period results:</h3>
+                                    <p class="text-muted fs-14">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, quia!.
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 pull-right">
+                                    <div class="text-lg-right">
+                                        <div class="form-group">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-blue waves-effect dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Export <i class="mdi mdi-chevron-down"></i> </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">CSV</a>
+                                                    <a class="dropdown-item" href="#">Excel</a>
+                                                    <a class="dropdown-item" href="#">PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-2 mt-0 hr--results">
+                            <div class="row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="card shadow-none p-0">
+                                        <div class="card-body pb-1">
+                                            <div class="row row-border-right">
+                                                <div class="col-12 col-sm-10 col-lg-10 p-0">
+                                                    <label for="tableFilters" class="mb-0 fs-16 fw-400"><i class="fe-filter fs-14 pr-1"></i> Select a value to filter by</label>
+                                                    <hr class="mb-0 mt-1">
+                                                    <select id="tableFilters" class="form-control br-0 select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Select a value...">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                            <optgroup label="Pacific Time Zone">
+                                                                <option value="CA">California</option>
+                                                                <option value="NV">Nevada</option>
+                                                                <option value="OR">Oregon</option>
+                                                                <option value="WA">Washington</option>
+                                                            </optgroup>
+                                                            <optgroup label="Mountain Time Zone">
+                                                                <option value="AZ">Arizona</option>
+                                                                <option value="CO">Colorado</option>
+                                                                <option value="ID">Idaho</option>
+                                                                <option value="MT">Montana</option>
+                                                                <option value="NE">Nebraska</option>
+                                                                <option value="NM">New Mexico</option>
+                                                                <option value="ND">North Dakota</option>
+                                                                <option value="UT">Utah</option>
+                                                                <option value="WY">Wyoming</option>
+                                                            </optgroup>
+                                                            <optgroup label="Central Time Zone">
+                                                                <option value="AL">Alabama</option>
+                                                                <option value="AR">Arkansas</option>
+                                                                <option value="IL">Illinois</option>
+                                                                <option value="IA">Iowa</option>
+                                                                <option value="KS">Kansas</option>
+                                                                <option value="KY">Kentucky</option>
+                                                                <option value="LA">Louisiana</option>
+                                                                <option value="MN">Minnesota</option>
+                                                                <option value="MS">Mississippi</option>
+                                                                <option value="MO">Missouri</option>
+                                                                <option value="OK">Oklahoma</option>
+                                                                <option value="SD">South Dakota</option>
+                                                                <option value="TX">Texas</option>
+                                                                <option value="TN">Tennessee</option>
+                                                                <option value="WI">Wisconsin</option>
+                                                            </optgroup>
+                                                            <optgroup label="Eastern Time Zone">
+                                                                <option value="CT">Connecticut</option>
+                                                                <option value="DE">Delaware</option>
+                                                                <option value="FL">Florida</option>
+                                                                <option value="GA">Georgia</option>
+                                                                <option value="IN">Indiana</option>
+                                                                <option value="ME">Maine</option>
+                                                                <option value="MD">Maryland</option>
+                                                                <option value="MA">Massachusetts</option>
+                                                                <option value="MI">Michigan</option>
+                                                                <option value="NH">New Hampshire</option>
+                                                                <option value="NJ">New Jersey</option>
+                                                                <option value="NY">New York</option>
+                                                                <option value="NC">North Carolina</option>
+                                                                <option value="OH">Ohio</option>
+                                                                <option value="PA">Pennsylvania</option>
+                                                                <option value="RI">Rhode Island</option>
+                                                                <option value="SC">South Carolina</option>
+                                                                <option value="VT">Vermont</option>
+                                                                <option value="VA">Virginia</option>
+                                                                <option value="WV">West Virginia</option>
+                                                            </optgroup>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <div class="card shadow-none p-0">
+                                        <div class="card-body pb-1">
+                                            <div class="row row-border-right">
+                                                <div class="col-12 col-sm-10 col-lg-10 p-0">
+                                                    <label for="length-of-stay" class="mb-0 fs-16 fw-400"><i class="fe-calendar fs-14 pr-1"></i> Length of stay</label>
+                                                    <hr class="mb-0 mt-1">
+                                                    <input type="text" id="length-of-stay" class="fw-400 brh-0 form-control" placeholder="Select a time period">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <div class="card shadow-none p-0">
+                                        <div class="card-body pb-1">
+                                            <div class="row">
+                                                <div class="col-12 col-sm-10 col-lg-10 p-0">
+                                                    <label for="dtSearch" class="mb-0 fs-16 fw-400"><i class="fe-search fs-14 pr-1"></i> Search records</label>
+                                                    <hr class="mb-0 mt-1">
+                                                    <input type="text" id="dtSearch" class="fw-400 brh-0 form-control" placeholder="Search table for something...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- end col-->
+                            </div>
+                            <table id="scroll-vertical-datatable" class="table dt-responsive nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Gender</th>
+                                        <th>Nationality</th>
+                                        <th>Date Of Birth</th>
+                                        <th>Profession</th>
+                                        <th>Home Address</th>
+                                        <th>State</th>
+                                        <th>Zipcode</th>
+                                        <th>Country</th>
+                                        <th>Address </th>
+                                        <th>Entry Port</th>
+                                        <th>Arrival Date</th>
+                                        <th>Intended Address</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+    </div>
+    <!-- end wrapper -->
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+    @@include('./partials/footer.html')
+    <!-- @@include('./partials/right-sidebar.html') -->
+
+    <!-- Vendor js -->
+    <!-- <script src="assets/js/vendor.min.js"></script> -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- third party js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+    <script src="assets/libs/pdfmake/pdfmake.min.js"></script>
+    <script src="assets/libs/pdfmake/vfs_fonts.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Picker Plugins js-->
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+    <!-- Form Plugins Js -->
+    <script src="assets/libs/jquery-nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/libs/switchery/switchery.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/jquery-mockjax/jquery.mockjax.min.js"></script>
+    <script src="assets/libs/autocomplete/jquery.autocomplete.min.js"></script>
+    <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-pickers.init.js"></script>
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- Forms Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!--Morris Chart-->
+    <script src="assets/libs/morris-js/morris.min.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+
+    <!-- Init js -->
+    <script src="assets/js/pages/morris.init.js"></script>
+    <script type="text/javascript">
+        Morris.Donut({
+            element: 'donut-example',
+            data: [{
+                label: "Dentist",
+                value: 62.5
+            }, {
+                label: "Manager",
+                value: 37.5
+            }],
+            colors: ["#002868", "#0ABFB7"]
+        });
+    </script>
+
+    <!-- App js-->
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+
+</html>
